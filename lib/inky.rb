@@ -58,7 +58,7 @@ module Inky
     def self.extract_raws(string)
       raws = []
       i = 0
-      regex = %r(< *raw *>(.*?)</ *raw *>)
+      regex = %r(<\s*raw\s*>((?!</\s*raw\s*>).*?)</\s*raw\s*>)misux
       str = string
       while raw = str.match(regex)
         raws[i] = raw[1]
